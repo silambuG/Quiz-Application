@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>Application</title>
+    <style>
+  body{
+  background-color:#999999;
+  }
+    #total_form{
+    height:auto;
+    width: 95%;
+    border: 2px solid black;
+    margin-left:40px;
+    padding: 2%;
+    font-weight: bold;
+    }
+    .a{
+    margin-left: 50%;
+    }
+
+    </style>
+</head>
+<body>
+{%extends 'school_main.html'%}
+{%block content%}
+<div style="text-align: center; height:150px; width:95%; border: 1px solid green; margin-left:40px; margin-top:20px">
+    <h2>St. MARY'S HR. SEC. SCHOOL</h2>
+    <pre style="font-size:18px">112, Salem New Bus Stand, Salem - 636103
+  Mobile No: +91 9597362234
+  Website: www.govthighschool.org</pre>
+</div>
+<hr>
+<div id="total_form">
+    <h2 style="text-align: center; text-decoration: underline">Application Form</h2><br><br>
+
+    <form class="row g-3" action="application_form" method="POST">
+        {% csrf_token %}
+
+        <h3>1.Student Details</h3>
+        <div class="col-md-6">
+            <label class="form-label">Student Name</label>
+            <input type="text" class="form-control" name="stud_name" placeholder="Student Name" required>
+        </div>
+
+        <div class="col-md-3">
+            <label class="form-label">Gender</label>
+            <select class="form-select" name="sex" required>
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+        </div>
+
+        <div class="col-md-3">
+            <label class="form-label">Date Of Birth</label>
+            <input type="date" class="form-control" name="dob" placeholder="Date" required>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">Father Name</label>
+            <input type="text" class="form-control" name="father_name" placeholder="Father Name" required>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">Mother Name</label>
+            <input type="text" class="form-control" name="mother_name" placeholder="Mother Name" required>
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label">Mother Tongue</label>
+            <input type="text" class="form-control" name="mother_tongue" placeholder="Mother Tongue" required>
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label">Religion</label>
+            <input type="text" class="form-control" name="religion" placeholder="Religion" required>
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label">Caste</label>
+            <select class="form-select" name="caste" required>
+                <option>SC</option>
+                <option>ST</option>
+                <option>BC</option>
+                <option>MBC</option>
+                <option>OBC</option>
+                <option>Other</option>
+            </select>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">Current address</label>
+            <textarea type="text" class="form-control" name="current_address" placeholder="Current address"
+                      required></textarea>
+        </div>
+
+        <div class="col-md-6" style="height:30px">
+            <label class="form-label">Permanent address</label>
+            <textarea type="text" class="form-control" name="permanent_address" placeholder="Permanent address"
+                      required></textarea>
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label">Mobile No</label>
+            <input type="number" maxlength="13" name="stud_ph_no" value="+91" class="form-control" required>
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label">Alternate No</label>
+            <input type="number" maxlength="13" name="stud_alter_ph_no" value="+91" class="form-control" required>
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label">Mail</label>
+            <input type="email" class="form-control" name="stud_mail" placeholder="email" required>
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label">Which standard you want to join</label>
+            <input type="number" min="6" max="12" name="join_stand" placeholder="Standard" class="form-control"
+                   required>
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label">Previous mark/percentage</label>
+            <input type="number" min="0" max="500" placeholder="mark/percentage" class="form-control" required>
+        </div>
+
+        <h3>2.Parents/Guardian Details</h3>
+
+        <div class="col-md-3">
+            <label class="form-label">Father's Name</label>
+            <input type="text" class="form-control" placeholder="Father's Name" required>
+        </div>
+
+        <div class="col-md-3">
+            <label class="form-label">Qualification</label>
+            <select class="form-select" required>
+                <option>10th</option>
+                <option>12th</option>
+                <option>Degree</option>
+                <option>Under graduate</option>
+                <option>Post graduate</option>
+                <option>Other</option>
+            </select>
+        </div>
+
+        <div class="col-md-3">
+            <label class="form-label">Occupation</label>
+            <input type="text" class="form-control" placeholder="Occupation" required>
+        </div>
+
+        <div class="col-md-3">
+            <label class="form-label">Income</label>
+            <input type="text" class="form-control" placeholder="Monthly income" required>
+        </div>
+
+        <div class="col-md-3">
+            <label class="form-label">Mother's Name</label>
+            <input type="text" class="form-control" placeholder="Mother's Name" required>
+        </div>
+
+        <div class="col-md-3">
+            <label class="form-label">Qualification</label>
+            <select class="form-select" required>
+                <option>10th</option>
+                <option>12th</option>
+                <option>Degree</option>
+                <option>Under graduate</option>
+                <option>Post graduate</option>
+                <option>Other</option>
+            </select>
+        </div>
+
+        <div class="col-md-3">
+            <label class="form-label">Occupation</label>
+            <input type="text" class="form-control" placeholder="Occupation" required>
+        </div>
+
+        <div class="col-md-3">
+            <label class="form-label">Income</label>
+            <input type="text" class="form-control" placeholder="Monthly income" required>
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label">Father's Mobile no</label>
+            <input type="text" maxlength="13" name="father_mobile" value="+91" class="form-control" required>
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label">Mother's Mobile no</label>
+            <input type="text" maxlength="13" name="mother_mobile" value="+91" class="form-control" required>
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label">Mail</label>
+            <input type="email" placeholder="email" name="parent_mail" class="form-control" required>
+        </div>
+
+        <h3>3.Previous School Details</h3>
+
+        <div class="col-md-6">
+            <label class="form-label">School Name</label>
+            <input type="text" class="form-control" required>
+        </div>
+
+        <div class="col-md-6">
+            <label class="form-label">School address</label>
+            <input type="text" class="form-control" required>
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label">Previous Standard</label>
+            <select class="form-select" name="previous_stand" required>
+                <option>1st</option>
+                <option>2nd</option>
+                <option>3rd</option>
+                <option>4th</option>
+                <option>5th</option>
+                <option>6th</option>
+                <option>7th</option>
+                <option>8th</option>
+                <option>9th</option>
+                <option>10th</option>
+                <option>11th</option>
+                <option>12th</option>
+            </select>
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label">Mark/Percentage</label>
+            <input type="text" class="form-control" name="previous_mark" placeholder="mark/percentage" required>
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label">passing year</label>
+            <input type="date" class="form-control" name="passed_out" placeholder="year of leaving" required>
+        </div>
+
+        <div class="col-md-12">
+            <label class="form-label">Reason/Why do you leave that School ?</label>
+            <input type="text" class="form-control" placeholder="Reason" required>
+        </div>
+
+        <div class="col-md-4">
+            <label class="form-label">Is the child physically challenged?</label>
+            <select class="form-select" name="physically_challenged" required>
+                <option>Yes</option>
+                <option>No</option>
+            </select>
+        </div>
+
+        <h3 style="text-align:center; text-decoration: underline">Declaration</h3>
+
+        <p style="font-size: 18px; font-weight: bold;"> I, the parent(Father/Mother) of <input class="col-md-3"> seeking
+            his/her admission in the school, solemnly declare
+            that the information furnished above is absolutely true and that if found factually wrong at any time after
+            the admission
+            during his/her stay in the school, I shall abide by the decision of the school authorities without any plea
+            or protest. I also
+            agree to abide by the rules and regulations in all aspects </p>
+
+        <div class="col-md-4">
+            <label class="form-label">Parent Name(Capital letter)</label>
+            <input type="text" class="form-control" placeholder="Name" required>
+        </div>
+
+        <div class="col-md-3">
+            <label class="form-label">Signature</label>
+            <input type="text" class="form-control">
+        </div>
+
+        <div class="col-md-3">
+            <label class="form-label">Date</label>
+            <input type="date" class="form-control" required>
+        </div>
+        <br><br>
+
+        <p style="text-decoration: underline;">The following documents must be produced along with the admission form
+            when joining date</p>
+        <span style="margin-left: 40px"> <p>A. Birth certificate</p>
+    <p>B. Transfer certificate</p>
+    <p>C. Adhar Card</p>
+    <p>D. 5 passport size photo</p></span>
+        <div class="col-12">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck2" required>
+                <label class="form-check-label" for="invalidCheck2">
+                    Agree to terms and conditions
+                </label>
+            </div>
+        </div>
+        <div class="col-12">
+            <button class="btn btn-primary a" type="submit" onclick="alert">Submit form</button>
+        </div>
+    </form>
+
+</div>
+<br><br>
+<div style="padding: 2%; background-color: #990000;">
+    <form class="row g-3">
+
+        <div class="col-md-6">
+            <p type="text" class="form-control about_us"
+               style="padding: 5%; text-align: justify; color: #990000; font-weight: bold;"><strong>ABOUT US<br><br><br></strong>St.
+                Mary's Anglo-Indian Higher Secondary School is a Catholic higher secondary school for boys in Chennai,
+                Tamil Nadu, India, operated by the Salesians of Don Bosco. It is located on Armenian Street, Broadway
+                opposite the High Court and adjacent to St Mary's Co-Cathedral.
+
+                St. Mary's is one of the oldest schools in India, and one of the first five schools to be set up during
+                the British period. It stands out today among the city schools for having often secured centum results
+                in the Board Exams.<br><br> Don Bosco was born in italy in the year of 1815. Having lost his father at
+                the age of two, Mamma Margaret, his mother, laid a strong spiritual
+                foundation for him. From childhood, his only desire was to be a spiritual guide of the youth. After
+                becoming a priest, his charming personality attracted hundreds of youngsters<br><br></p>
+        </div>
+
+        <div class="col-md-6">
+            <p type="text" class="form-control about_us"
+               style="padding: 5%; line-height: 1cm; font-style: justify; color: #990000; font-weight: bold;"><strong>CONTACT
+                US<br><br></strong>St.Mary's Hr. Sec. School<br>(A DON BOSCO INSTITUTION)<br>112, Salem New Bus
+                Stand,<br>Salem-636001<br>Phone: 004-23435476<br>Website: www.stmarysschool.com<br>Email ID:
+                stmarys.school@gmail.com<br><br><br></p>
+        </div>
+    </form>
+</div>
+<hr>
+<p style="text-align: center;">Copyright @ <a href="">St.Mary's Hr. Sec. School</a> All rights reserved. Powered by <a
+        href="">Boscosoft</a></p>
+{%endblock%}
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>History Quiz</title>
+    <style>
+        .label{
+    height: 35px;
+    width: 500px;
+    border: 1px solid transparent;
+    margin: 5px 0;
+    }
+    .container{
+    height: auto;
+    width: 580px;
+    border: 1px solid transparent;
+    padding: 3%;
+    margin-left: 27%;
+    overflow: hidden;
+    }
+    h1{
+    margin-left: 37%;
+    }
+    button{
+    height: 40px;
+    width: 90px;
+    border-radius: 10px;
+    background-color: #0066ff;
+    color: white;
+    font-size: 15px;
+    margin-left: 37%;
+    margin-top: 4%;
+    }
+</style>
+</head>
+<body>
+{% extends 'school_main.html'%}
+{% block content %}
+<!--{{data}}<br><br>-->
+<!--{{data.results}}<br><br>-->
+<!--{{data.results.0.question}}-->
+
+{%for data in data.results %}
+<div class="container" style="margin-left: 27%;">
+
+<form action="computer_science_quiz" method="POST">
+    <table>
+        <tr><th><span style="font-size: 20px; font-weight: bold;text-decoration: underline;">{{data.question}}</span></th></tr>
+  <tr><td><div class="label"><input type="checkbox" name="option_1">
+      <label><strong>{{data.correct_answer}}</strong></label></div></td></tr>
+
+  <tr><td><div class="label"><input type="checkbox" name="option_2">
+      <label> <strong>{{data.incorrect_answers.1}}</strong></label></div></td></tr>
+
+  <tr><td><div class="label"><input type="checkbox" name="option_3">
+      <label><strong> {{data.incorrect_answers.2}}</strong></label></div></td></tr>
+
+  <tr><td><div class="label"><input type="checkbox" name="option_4">
+      <label><strong> {{data.incorrect_answers.0}}</strong></label></div></td></tr>
+
+
+      <tr><td><div class="label" style="background-color: rgb(178, 239, 178); padding: 1% 0; text-align: center; justify-content: center;" ">
+    <label><strong>Answer: {{data.correct_answer}}</strong></label>
+</div></td></tr>
+
+<!--  <tr><td><div class="label">-->
+<!--      <label><strong>Explanation: {{ques.explanation}}</strong></label></div></td></tr><br>-->
+
+    </table>
+</form>
+</div>
+{% endfor %}
+<button type="submit" style="margin-left: 37%;"><a href="{% url 'home'%}">Submit</a></button>
+
+{% endblock %}
+</body>
+</html>

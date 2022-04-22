@@ -1,0 +1,11 @@
+django~=2.2
+psycopg2
+requests
+Pillow
+django-cors-headers
+whitenoise
+django_heroku
+heroku
+
+
+

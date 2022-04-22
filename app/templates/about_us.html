@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>about us</title>
+    <style>
+        .about_us {
+            height: 500px;
+        }
+    </style>
+</head>
+{% extends 'school_main.html'%}
+{% block about %}
+{% endblock %}
+<body>
+
+    {% block content %}
+    <div style="padding: 2%; background-color: #990000;">
+        <form class="row g-3">
+
+            <div class="col-md-6">
+                <p type="text" class="form-control about_us" style="padding: 5%; text-align: justify; color: #990000; font-weight: bold;">
+                    <strong>ABOUT US<br><br><br></strong>St. Mary's Anglo-Indian Higher Secondary School is a Catholic higher secondary school for boys in Chennai, Tamil Nadu, India, operated by the Salesians of Don Bosco. It is located on Armenian Street, Broadway opposite the High Court and adjacent to St Mary's Co-Cathedral.
+
+                    St. Mary's is one of the oldest schools in India, and one of the first five schools to be set up during the British period. It stands out today among the city schools for having often secured centum results in the Board Exams.<br><br> Don Bosco was born in italy in the year of 1815. Having lost his father at the age of two, Mamma Margaret, his mother, laid a strong spiritual
+                    foundations for him. From childhood, his only desire was to be a spiritual guide of the youth. After becoming a priest, his charming personality attracted hundreds of youngsters
+                </p>
+            </div>
+
+            <div class="col-md-6">
+                <p type="text" class="form-control about_us" style="padding: 5%; line-height: 1cm; font-style: justify; color: #990000; font-weight: bold;"><strong>CONTACT US<br><br></strong>St.Mary's Hr. Sec. School<br>(A DON BOSCO INSTITUTION)<br>112, Salem New Bus Stand,<br>Salem-636001<br>Phone: 004-23435476<br>Website: www.stmarysschool.com<br>Email ID: stmarys.school@gmail.com<hr></p>
+            </div>
+        </form>
+    </div>
+    <p style="text-align: center;">Copyright @ <a href="">St.Mary's Hr. Sec. School</a> All rights reserved. Powered by <a href="">Boscosoft</a> </p>
+    {% endblock %}
+</body>
+</html>

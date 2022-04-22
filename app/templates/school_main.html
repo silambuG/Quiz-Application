@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+
+<head>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <title>school</title>
+    <style>
+        body {
+            background-color: white;
+            height: auto;
+        }
+
+        #login_link {
+            color: white;
+        }
+
+        a {
+            text-decoration: None;
+        }
+
+        .about_us {
+            height: 500px;
+        }
+
+        .blank {
+            height: 80px;
+            width: 100%;
+            background-color: #990000;
+        }
+
+        #school_name {
+            text-align: center;
+        }
+
+        figure {
+            height: auto;
+        }
+        figure img{
+            width: 80vw;
+            height:400px;
+            margin-left:140px;
+        }
+        .menu {
+            width: 100%;
+            height: 30%;
+            margin: auto;
+            padding: 0px 0;
+            display: flex;
+            justify-content: space-between;
+            background-color: grey;
+            margin-top: 5px;
+        }
+
+            .menu ul li {
+                list-style: none;
+                display: inline-block;
+                margin: 0 40px;
+                border: 1px solid transparent;
+                background-color: transparent;
+                padding: 10px 0px;
+            }
+
+                .menu ul li a {
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    color: white;
+                    text-shadow: 0 -6px 5px black;
+                }
+
+                .menu ul li form input {
+                    height: 30px;
+                    border-radius: 5px;
+                }
+
+                .menu ul li form button {
+                    height: 30px;
+                    border-radius: 5px;
+                    background-color: #990000;
+                    color: white;
+                    overlay: hidden;
+                }
+
+                .menu ul li a:hover {
+                    color: #990000;
+                }
+    </style>
+</head>
+<body>
+
+    <div class="blank" style="text-shadow: 0 -10px 5px black;"><p id="school_name"> <a style="text-decoration: None;" href=""> <span style="font-style: italic; font-weight: bold; color: white; font-size: 65px;"> St. MARY'S  HR. SEC. SCHOOL</span><span style="color: white; font-style: italic; font-size: 20px"><strong>, SALEM </strong></span> </a></p></div>
+
+    <nav class="menu">
+        <ul>
+            <li><a href="/"><span><strong style="font-style: italic; ">St.MARY'S</strong></span></a></li>
+            <li>
+                <a href="staff_login" style="font-style: italic;"><strong>STAFF</strong></a>
+            </li>
+            <li>
+                <a href="application_form" style="font-style: italic; "><strong>APPLICATION</strong></a>
+            </li>
+            <li>
+                <a href="student_result_login" style="font-style: italic;"><strong>RESULTS</strong></a>
+            </li>
+            <li>
+                <a href="about_us" style="font-style: italic;"><strong>ABOUT US</strong></a>
+            </li>
+            <li>
+                <a href="quiz" style="font-style: italic;"><strong>QUIZEE</strong></a>
+            </li>
+            <li>
+                <form>
+                    <input type="search" placeholder="Search" aria-label="Search">
+                    <button type="submit">Search</button>
+                </form>
+            </li>
+
+        </ul>
+    </nav><br>
+    {% block content%}
+
+    <figure>
+        <img src="{% static 'pictures/1615021329648.jpeg'%}" height="400px" width="100%"><br><br>
+        <img src="{% static 'pictures/1615021329640.jpeg'%}" height="400px" width="100%"><br><br>
+        <img src="{% static 'pictures/1615021329629.jpeg'%}" height="400px" width="100%"><br><br>
+        <img src="{% static 'pictures/1615021329614.jpeg'%}" height="400px" width="100%"><br><br>
+    </figure>
+
+    <span style="margin-left: 120px;">
+        <p><strong>6<sup>th</sup> to 12<sup>th</sup> Admission open <a href="application_form">Apply Here</a> Till 12/06/2021 </strong></p><hr>
+    </span>
+
+    <div style="padding: 2%; background-color: #990000;">
+        <form class="row g-3">
+
+            <div class="col-md-6">
+                <p type="text" class="form-control about_us" style="padding: 5%; text-align: justify; color: #990000; font-weight: bold;">
+                    <strong>ABOUT US<br><br><br></strong>St. Mary's Anglo-Indian Higher Secondary School is a Catholic higher secondary school for boys in Chennai, Tamil Nadu, India, operated by the Salesians of Don Bosco. It is located on Armenian Street, Broadway opposite the High Court and adjacent to St Mary's Co-Cathedral.
+
+                    St. Mary's is one of the oldest schools in India, and one of the first five schools to be set up during the British period. It stands out today among the city schools for having often secured centum results in the Board Exams.<br><br> Don Bosco was born in italy in the year of 1815. Having lost his father at the age of two, Mamma Margaret, his mother, laid a strong spiritual
+                    foundation for him. From childhood, his only desire was to be a spiritual guide of the youth. After becoming a priest, his charming personality attracted hundreds of youngsters
+                </p>
+            </div>
+
+            <div class="col-md-6">
+                <p type="text" class="form-control about_us" style="padding: 5%; line-height: 1cm; font-style: justify; color: #990000; font-weight: bold;"><strong>CONTACT US<br><br></strong>St.Mary's Hr. Sec. School<br>(A DON BOSCO INSTITUTION)<br>112, Salem New Bus Stand,<br>Salem-636001<br>Phone: 004-23435476<br>Website: www.stmarysschool.com<br>Email ID: stmarys.school@gmail.com</p>
+            </div>
+        </form>
+    </div>
+    <hr><p style="text-align: center;">Copyright @ <a href="">St.Mary's Hr. Sec. School</a> All rights reserved. Powered by <a href="">Boscosoft</a> </p>
+    {%endblock%}
+</body>
+</html>

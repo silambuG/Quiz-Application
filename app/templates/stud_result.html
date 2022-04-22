@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <title>result</title>
+  <style>
+    #result{
+        height: auto;
+        width: 500px;
+        border: 2px solid black;
+        padding: 2%;
+        margin-left: 30%;
+        margin-top: 50px;
+    }
+    #heading{
+    text-align: center;
+    }
+
+  </style>
+</head>
+<body>
+{% extends 'school_main.html'%}
+{% block content %}
+<div id="result">
+
+{% for stud_results in result %}
+  <h3 id="heading">Exam Results</h3>
+  <hr>
+<h5>Student Name : {{stud_results.stud_name}}</h5>
+<h5>Reg.No : {{stud_results.stud_roll_no}}</h5><hr>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">SUBJECTS</th>
+      <th scope="col">MARKS / 100</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Language Tamil</th>
+      <td>{{ stud_results.Tamil }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Language English</th>
+      <td>{{ stud_results.English }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Maths</th>
+      <td>{{ stud_results.Mathematical }}</td>
+    </tr>
+      <tr>
+      <th scope="row">Science</th>
+      <td>{{ stud_results.Science }}</td>
+    </tr>
+        <tr>
+      <th scope="row">Social Science</th>
+      <td>{{ stud_results.Social_science }}</td>
+    </tr>
+      </tr>
+        <tr>
+      <th scope="row">Hindi</th>
+      <td>{{ stud_results.Hindi }}</td>
+    </tr>
+      </tr>
+        <tr>
+      <th scope="row">Sports</th>
+      <td>{{ stud_results.Sports }}</td>
+    </tr>
+
+    <tr>
+      <th scope="row" class="primary">Total</th>
+      <td class="primary">{{ stud_results.Total }}</td>
+    </tr>
+
+  </tbody>
+</table>
+{% endfor %}
+  <p style="color: red">Wrong Reg.No or Date Of Birth ! Try again..</p>
+</div>
+{% endblock %}
+</body>
+</html>

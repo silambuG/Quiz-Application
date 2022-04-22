@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+        <style>
+       #teacher_login_box{
+            height: 50%;
+            width: 50%;
+            margin-left: 400px;
+            border: 5px solid blue;
+            box-shadow: 0 0 10px blue;
+            border-radius: 30px;
+            padding: 1%;
+            margin-top: 40px;
+            }
+            legend{
+            color: red;
+            text-shadow: 0 0 5px white;
+            }
+            .a{
+            margin-left: 400px
+            }
+        .about_us{
+        height: 500px;
+        }
+    </style>
+
+</head>
+<body>
+{% extends 'school_main.html'%}
+{% block content %}
+<div id="teacher_login_box">
+
+       <legend>Student Login</legend>
+
+       <form action="stud_login" method="POST">
+
+           {% csrf_token %}
+       <input type="email" name="username" class="form-control" placeholder="Email" required><br>
+
+       <input type="password" name="password" class="form-control" placeholder="password" required><br>
+
+       <button class="btn btn-primary a" type="submit"><a style="text-decoration: None; color: white;" id="login_link" href="#">Login</a> </button>
+      </form>
+    <p><strong>Create an Account <a href="staff_signup">sign Up</a></strong></p>
+   </div><br><br>
+
+{% endblock %}
+</body>
+
+</html>

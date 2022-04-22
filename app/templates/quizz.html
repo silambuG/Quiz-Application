@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quizz Test</title>
+    <style>
+        body{
+        background-color: #3399ff;
+        }
+        h1{
+            margin-left: 27%;
+            color: #990000;
+            text-shadow: 0 -5px 5px black ;
+            margin-top: 10%;
+        }
+        button{
+        height: 50px;
+        width: 105px;
+        margin-left: 27%;
+        margin-top: 8%;
+        border-radius: 10px 0px;
+        background-color: grey;
+        overlay: hidden;
+        }
+        button a {
+        color: #990000;
+        text-decoration: none;
+        font-size: 15px;
+        }
+    </style>
+</head>
+{% extends 'school_main.html'%}
+{% block content %}
+<body>
+<h1>WELCOME TO QUIZ COMPETITION</h1>
+<button type="button" style="margin-left: 27%; margin-top: 8%;"><a href="multi_quiz"><strong>TAKE QUIZ</strong></a></button>
+<button type="button" style="margin-left: 27%; margin-top: 8%;"><a href="add_question"><strong>ADD QUIZ</strong></a></button>
+</body>
+{% endblock %}
+</html>

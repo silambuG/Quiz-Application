@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>quiz title's</title>
+    <style>
+        *{
+        margin:0;
+        padding:0;
+        box-sizing: border-box;
+        }
+        body{
+        background-color: #3399ff;
+        }
+        .quiz_1{
+        position: relative;
+         height: 50px;
+         width: 70%;
+         border: 1px solid transparent;
+         margin-left: 270px;
+         margin-top: 18px;
+         padding: 30px;
+        }
+        .quiz_1 label {
+        margin-left: 120px;
+        }
+        .quiz_1 button {
+        border-radius: 5px 5px;
+        overlay: hidden;
+        position: absolute;
+        top:24px;
+        left: 660px;
+        height: 30px;
+        width: 105px;
+        background-color: white;
+        color:blue;
+        }
+        .quiz_1 button a{
+        text-decoration: none;
+        }
+        h1{
+        margin-left: 400px;
+        }
+    </style>
+</head>
+{% extends 'school_main.html'%}
+{% block content %}
+<body>
+
+<h1>WELCOME TO QUIZ COMPETITION</h1>
+<div class="quiz_1">
+    <label><b>General Knowledge</b></label>
+    <button type="button"><a href="gk_quiz"><strong>TAKE QUIZ</strong></a></button>
+</div>
+<div class="quiz_1">
+    <label><b>Computer Science</b></label>
+    <button type="button"><a href="computer_science_quiz"><strong>TAKE QUIZ</strong></a></button>
+</div>
+<div class="quiz_1">
+    <label><b>Sports Quiz</b></label>
+    <button type="button"><a href="sports_quiz"><strong>TAKE QUIZ</strong></a></button>
+</div>
+<div class="quiz_1">
+    <label><b>History</b></label>
+    <button type="button"><a href="history_quiz"><strong>TAKE QUIZ</strong></a></button>
+</div>
+
+<div class="quiz_1">
+    <label><b>Django Quiz</b></label>
+    <button type="button"><a href="take_quiz"><strong>TAKE QUIZ</strong></a></button>
+</div>
+
+</body>
+{% endblock%}
+</html>
